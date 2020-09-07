@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <title>Résultats de l'opération du projet système</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        .nom_arbo{
+            font-weight: bold;
+            color: #3daee9;
+        }
+        .middle{
+            margin: auto;
+        }
+        .modal-code pre{
+            width: max-content;
+            background-color: #31363b;
+            color: #3daee9;
+            border-radius: 1em;
+            padding: 1em 1em;    
+        }
+
+    </style>
+	<body>
+            
+
+
+		<div class="container-fluid">
+            <div class="modal fade" id="modalEtatarbo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title middle" id="exampleModalCenterTitle">Les deux arborescences <span class="nom_arbo">%dir1</span> et <span class="nom_arbo">%dir1</span> sont %etatArbo</h3>                            </h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body middle">
+                            <h5>Il y a %fDiff3 fichiers différents sur %fTot3 fichiers dans %dir1 et %dir2</h5>
+                            <br>
+                            <h5>Il y a %dDiff3 dossiers différents sur %dTot3 fichiers dans %dir1 et %dir2</h5>
+                            <hr>
+                            
+                            <br>
+                            
+                                
+                            <div class="modal-code">
+                                <h5>Liste des fichiers différents :</h5>
+                                <pre>%listf3</pre>
+
+                                <h5>Liste des dossiers différents :</h5>
+                                <pre>%listd3</pre>
+                            </div>
+                               
+                        </div>
+                        <div class="modal-footer">
+                            <p style="margin: 0 auto; padding: 0.5em 0em;">&copy; Modal crée par Arsène FOUGEROUSE</p>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+			<header>
+				<div class="jumbotron">
+					<h1>Projet Système</h1>
+					<p>Ce site web renvoie :</p>
+					<p>Une information si les deux arborescences sont identiques ou différentes.
+					<br>Le nombre de fichiers/dossiers différents
+					<br>Les fichiers et répertoires différents pour chaque arborescence</p>
+				</div>
+			</header>
+			<div class="row" style="margin-top: 1em; margin-bottom: 2em;">
+                <nav class="col-sm-7">
+                    <div class="card">
+                        <img src="" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre de fichiers différents dans %dir1</h5>
+                                <p class="card-text">Il y a %fDiff1 fichiers différents sur %fTot1 fichiers dans %dir1</p>
+                                <a href="#" class="btn btn-primary">voir les fichiers différents</a>
+                            </div>
+                    </div>
+                </nav>
+                <nav class="col-sm-5">
+                    <div class="card">
+                        <img src="" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre de dossiers différents dans %dir1</h5>
+                                <p class="card-text">Il y a %dDiff1 dossiers différents sur %dTot1 dossiers dans %dir1</p>
+                                <a href="#" class="btn btn-primary">voir les dossiers différents</a>
+                            </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="row" style="margin-top: 1em; margin-bottom: 3em;">
+                <nav class="col-sm-5">
+                    <div class="card">
+                        <img src="" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre de fichiers différents dans %dir2</h5>
+                                <p class="card-text">Il y a %fDiff2 fichiers différents sur %fTot2 fichiers dans %dir2</p>
+                                <a href="#" class="btn btn-primary">Voir les fichiers différents</a>
+                            </div>
+                    </div>
+                </nav>
+                <nav class="col-sm-7">
+                    <div class="card">
+                        <img src="" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre de dossiers différents dans %dir2</h5>
+                                <p class="card-text">Il y a %fDiff2 dossiers différents sur %fTot2 dossiers dans %dir2</p>
+                                <a href="#" class="btn btn-primary">Voir les dossiers différents</a>
+                            </div>
+                    </div>
+                </nav>
+			</div>
+			<div class="row d-flex justify-content-center">
+                <button type="button" style="padding: 2em; border-radius: 1em; margin-bottom: 5em;"class="btn btn-primary" data-toggle="modal" data-target="#modalEtatarbo">
+                    Voir les différences entre les 2 arborescences
+                </button>
+	
+			</div>
+			<footer>
+				<p class="text-center small">Doits réservés à Arsène FOUGEROUSE et Mayeul PALACIOS</p>
+			</footer>
+        </div>
+        
+	</body>
+	<script>
+
+   
+</script>
+</html>

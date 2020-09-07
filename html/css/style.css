@@ -1,0 +1,87 @@
+.nom_arbo{
+    font-weight: bold;
+    color: #3daee9;
+}
+
+.modal-title{
+    width: 100%;
+    margin : 0 auto;
+    text-align: center;
+}
+
+.modal-code pre{
+    width: max-content;
+    background-color: #31363b;
+    color: #3daee9;
+    border-radius: 1em;
+    padding: 1em 1em;    
+} 
+
+.btn-purple{
+    padding: .5em;
+    background-color: #af264f;
+    color: white;
+    text-decoration: none;
+    border-radius: .5em;
+    display: inline-block;
+    transition-duration: 150ms;
+}
+
+.btn-purple:hover{
+    background-color: #992145;
+    color: white;
+    text-decoration: none;
+}
+
+a.btn-rgb{
+    font-size: 1.2em;
+}
+
+.btn-rgb{
+    padding: .8em;
+    background: linear-gradient(to right, rgb(241, 176, 54), #f0336b);
+    color: black;
+    text-decoration: none;
+    border-radius: .5em;
+    display: inline-block;
+    transition-duration: 150ms;
+}
+
+.btn-rgb:hover{
+    background: linear-gradient(to right, rgb(143, 104, 32), #af264f);
+    color: white;
+    text-decoration: none;
+}
+
+.jumbotron{
+    background: url('../images/ubuntu.png')no-repeat center center;
+    background-size: cover;
+    color: white;
+    margin-top: -2em;
+}
+
+.card{
+    color: white;
+    background: linear-gradient(135deg,#af264f, orange);
+    box-shadow: .2em .2em .15em rgba(44, 44, 44, 0.5);
+    transition-duration: .5s;
+    margin: 0 2em;
+}
+
+.card:hover{
+    transform: translate(-.2em,-.2em);
+    box-shadow: .4em .4em .9em rgba(44, 44, 44, 0.35);
+}
+
+.file-card{
+    background: linear-gradient(135deg,darkcyan,purple);
+}
+
+.img-folder{
+    max-width: 5em;
+    min-width: 1em;
+}
+
+.card-title{
+    padding-top:1em;
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <title>Résultats de l'opération du projet système</title>
+        <link rel="stylesheet" href="../html/css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+	<body>
+            
+
+
+		
+        <div class="modal fade" id="modalEtatarbo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalCenterTitle">Les deux arborescences 
+                            <span class="nom_arbo">%dir1</span> et <span class="nom_arbo">%dir2</span> sont 
+                            <span style="font-weight: bold; color: %clrEtat;">%etatArbo</span></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body middle">
+                        <h5>Il y a %fDiff3 fichiers différents sur %fTot3 fichiers dans <span class="nom_arbo">%dir1</span> et <span class="nom_arbo">%dir2</span></h5>
+                        <br>
+                        <h5>Il y a %dDiff3 dossiers différents sur %dTot3 fichiers dans <span class="nom_arbo">%dir1</span> et <span class="nom_arbo">%dir2</span></h5>
+                        <hr>
+                        
+                        <br>
+                        
+                            
+                        <div class="modal-code">
+                            <h5>Liste des fichiers différents :</h5>
+                            <pre>%listf3</pre>
+
+                            <h5>Liste des dossiers différents :</h5>
+                            <pre>%listd3</pre>
+                        </div>
+                            
+                    </div>
+                    <div class="modal-footer">
+                        <p style="margin: 0 auto; padding: 0.5em 0em;">&copy; Modal crée par Arsène FOUGEROUSE</p>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="modalfarbo1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title middle" id="exampleModalCenterTitle">L'arborescence <span class="nom_arbo">%dir1</span> contient : </h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body middle">
+                        <h5>Il y a %fDiff1 fichiers différents sur %fTot1 fichiers dans <span class="nom_arbo">%dir1</span></h5>             
+                        <br>
+    
+                        <div class="modal-code">
+                            <h5>Liste des fichiers différents :</h5>
+                            <pre>%listf1</pre>
+                        </div>     
+                    </div>
+                    <div class="modal-footer">
+                        <p style="margin: 0 auto; padding: 0.5em 0em;">&copy; Modal crée par Arsène FOUGEROUSE</p>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="modaldarbo1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title middle" id="exampleModalCenterTitle">L'arborescence <span class="nom_arbo">%dir1</span> contient : </h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body middle">
+                        <h5>Il y a %dDiff1 fichiers différents sur %dTot1 fichiers dans <span class="nom_arbo">%dir1</span></h5>             
+                        <br>
+    
+                        <div class="modal-code">
+                            <h5>Liste des dossiers différents :</h5>
+                            <pre>%listd1</pre>
+                        </div>     
+                    </div>
+                    <div class="modal-footer">
+                        <p style="margin: 0 auto; padding: 0.5em 0em;">&copy; Modal crée par Arsène FOUGEROUSE</p>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <div class="modal fade" id="modalfarbo2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title middle" id="exampleModalCenterTitle">L'arborescence <span class="nom_arbo">%dir2</span> contient : </h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body middle">
+                        <h5>Il y a %fDiff2 fichiers différents sur %fTot2 fichiers dans <span class="nom_arbo">%dir2</span></h5>             
+                        <br>
+    
+                        <div class="modal-code">
+                            <h5>Liste des fichiers différents :</h5>
+                            <pre>%listf2</pre>
+                        </div>     
+                    </div>
+                    <div class="modal-footer">
+                        <p style="margin: 0 auto; padding: 0.5em 0em;">&copy; Modal crée par Arsène FOUGEROUSE</p>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="modaldarbo2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable" role="document">
+                <div class="modal-content" id="img-jumb">
+                    <div class="modal-header">
+                        <h3 class="modal-title middle" id="exampleModalCenterTitle">L'arborescence <span class="nom_arbo">%dir2</span> contient : </h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body middle">
+                        <h5>Il y a %dDiff2 dossiers différents sur %dTot2 dossiers dans <span class="nom_arbo">%dir2</span></h5>             
+                        <br>
+    
+                        <div class="modal-code">
+                            <h5>Liste des dossiers différents :</h5>
+                            <pre>%listd2</pre>
+                        </div>     
+                    </div>
+                    <div class="modal-footer">
+                        <p style="margin: 0 auto; padding: 0.5em 0em;">&copy; Modal crée par Arsène FOUGEROUSE</p>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+        <header>
+            <div class="jumbotron">
+                <div class="row d-flex justify-content-center"><h1>Projet Système</h1></div>
+                <div class="row d-flex justify-content-center"><h3>Cette page web affiche :</h3></div>
+                <div class="row d-flex justify-content-center">
+                    <ul>
+                        <li>Une information si les deux arborescences sont identiques ou différentes</li>
+                        <li>Le nombre de fichiers/dossiers différents pour chaque arborescence</li>
+                        <li>Les fichiers et répertoires différents pour chaque arborescence</li>
+                    </ul>
+                </div>  
+                <div class="row d-flex justify-content-center mt-3">
+                    <a href="#" class="btn-rgb" data-toggle="modal" data-target="#modalEtatarbo">Voir les différences entre 
+                        <span class="nom_arbo">%dir1</span> et <span class="nom_arbo">%dir2</span>
+                    </a>            
+                </div> 
+            </div>
+        </header>
+        <div class="container-fluid">
+
+			<div class="card-group" style="margin-top: 1em; margin-bottom: 2em;">
+                <div class="card border-primary file-card col-sm-7">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h4 class="card-title">Nombre de fichiers différents dans <span class="nom_arbo">%dir1</span></h4>
+                                <hr>
+                                <p class="card-text">Il y a %fDiff1 fichiers différents sur %fTot1 fichiers dans <span class="nom_arbo">%dir1</span></p>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalfarbo1">Voir les fichiers différents</a>
+                            </div>
+                            <div class="col-sm-3 d-flex justify-content-center">
+                                <img src="../html/images/file2.svg" class="img-card" alt="Image d'un fichier"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-danger col-sm-5">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-9 d-flex justify-content-center">
+                                <h4 class="card-title">Nombre de dossiers différents dans <span class="nom_arbo">%dir1</span></h4>
+                            </div>
+                            <div class="col-md-3 d-flex justify-content-center">
+                                    <img src="../html//images/folder2.svg" class="img-folder" alt="Image d'un dossier"/>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-sm-11">
+                                <p class="card-text">Il y a %dDiff1 dossiers différents sur %dTot1 dossiers dans <span class="nom_arbo">%dir1</span></p>
+                                <a href="#" class="btn-purple" data-toggle="modal" data-target="#modaldarbo1">Voir les dossiers différents</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-group" style="margin-top: 1em; margin-bottom: 3em;">
+                <div class="card border-danger col-sm-5">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-9 d-flex justify-content-center">
+                                <h4 class="card-title">Nombre de dossiers différents dans <span class="nom_arbo">%dir2</span></h4>
+                            </div>
+                            <div class="col-md-3 d-flex justify-content-center">
+                                <img src="../html/images/folder2.svg" class="img-folder" alt="Image d'un dossier"/>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-sm-11">
+                                <p class="card-text">Il y a %dDiff2 dossiers différents sur %dTot2 dossiers dans <span class="nom_arbo">%dir2</span></p>
+                                <a href="#" class="btn-purple" data-toggle="modal" data-target="#modaldarbo2">Voir les dossiers différents</a>            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card file-card border-primary col-sm-7">
+                    <div class="card-body row">
+                        <div class="col-sm-9 justify-content-center">
+                            <h4 class="card-title">Nombre de fichiers différents dans <span class="nom_arbo">%dir2</span></h4>
+                            <hr>
+                            <p class="card-text">Il y a %fDiff2 fichiers différents sur %fTot2 fichiers dans <span class="nom_arbo">%dir2</span></p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalfarbo2">Voir les fichiers différents</a>
+                        </div>
+                        <div class="col-sm-3 d-flex justify-content-center">
+                            <img src="../html/images/file2.svg" class="img-card" alt="Image d'un fichier"/>
+                        </div>
+                    </div>
+                </div>
+
+			</div>
+			
+			<footer>
+				<p class="text-center small">Droits réservés à Arsène FOUGEROUSE et Mayeul PALACIOS</p>
+			</footer>
+        </div>
+        
+	</body>
+	<script>
+
+   
+</script>
+</html>
